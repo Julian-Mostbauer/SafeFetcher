@@ -39,10 +39,19 @@ fetcher.sfetch((data) => {
 
 ## API
 
+### new SafeFetcher(url, init)
+Creates a new Fetcher for the given url, with the optional init
+
+- `url` (URL | RequestInfo) works the same as in the normal fetch
+- `init` (RequestInit) works the same as in the normal fetch
+
 ### `SafeFetcher.setErrHandler(statusCode, handler)`
+
 Adds an Error Handler for the given status code
+
 - `statusCode` (int): HTTP error code
 - `handler` ((error) => void): The function that handles the given error 
+
 ### `SafeFetcher.sfetch(callback)`
 
 Performs a fetch request and handles errors.

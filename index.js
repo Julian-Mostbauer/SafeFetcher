@@ -1,10 +1,12 @@
 class Fetcher {
   url;
   errorHandlers;
+  init;
 
-  constructor(url) {
+    constructor(url, init = {}) {
     this.url = url;
     this.errorHandlers = {};
+    this.init = init;
   }
 
   setErrHandler(statusCode, handler) {
@@ -13,7 +15,7 @@ class Fetcher {
   }
 
   async sfetch(callback) {
-    return fetch(this.url).then((response) => {
+    return fetch(this.url, this.init).then((response) => {
       if (response.ok) {
         return response.json().then((data) => callback(data));
       } else {

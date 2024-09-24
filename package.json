@@ -1,6 +1,6 @@
 {
   "name": "safefetcher",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Provides a fetch abstraction for easier error handling",
   "main": "index.js",
   "scripts": {
