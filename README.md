@@ -39,11 +39,14 @@ fetcher.sfetch((data) => {
 
 ## API
 
-### `SafeFetcher.sfetch(url, callback)`
+### `SafeFetcher.setErrHandler(statusCode, handler)`
+Adds an Error Handler for the given status code
+- `statusCode` (int): HTTP error code
+- `handler` ((error) => void): The function that handles the given error 
+### `SafeFetcher.sfetch(callback)`
 
 Performs a fetch request and handles errors.
 
-- `url` (string): The URL to fetch.
 - `callback` ((object) => void): Callback that will be performed on the resulting data, only if it succeds.
 
 Returns a Promise that resolves to the response object.
