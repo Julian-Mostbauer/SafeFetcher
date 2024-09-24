@@ -18,16 +18,16 @@ Here's a basic example of how to use SafeFetcher:
 const SafeFetcher = require('safefetcher');
 
 const fetcher = new SafeFetcher("https://jsonplaceholder.typicode.com/todos/-1")
-    .setErrHandl(404, (error) => {
+    .setErrHandler(404, (error) => {
       console.error("404 error");
     })
-    .setErrHandl(500, (error) => {
+    .setErrHandler(500, (error) => {
       console.error("500 error");
     });
 
-  fetcher.sfetch((data) => {
-    console.log(data);
-  });
+fetcher.sfetch((data) => {
+  console.log(data);
+});
 
 ```
 
@@ -50,7 +50,7 @@ Returns a Promise that resolves to the response object.
 
 ## Contributing
 
-Contributions from outside sources are not neccesary. This is a small project
+Contributions from outside sources are not neccesary. This is a small project.
 
 ## License
 

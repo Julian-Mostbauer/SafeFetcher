@@ -7,7 +7,7 @@ class Fetcher {
     this.errorHandlers = {};
   }
 
-  setErrHandl(statusCode, handler) {
+  setErrHandler(statusCode, handler) {
     this.errorHandlers[statusCode] = handler;
     return this;
   }
