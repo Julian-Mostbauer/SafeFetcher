@@ -17,6 +17,18 @@ Here's a basic example of how to use SafeFetcher:
 ```javascript
 const SafeFetcher = require('safefetcher');
 
+const fetcher = new SafeFetcher("https://jsonplaceholder.typicode.com/todos/-1")
+    .setErrHandl(404, (error) => {
+      console.error("404 error");
+    })
+    .setErrHandl(500, (error) => {
+      console.error("500 error");
+    });
+
+  fetcher.sfetch((data) => {
+    console.log(data);
+  });
+
 ```
 
 ## Features
@@ -27,18 +39,18 @@ const SafeFetcher = require('safefetcher');
 
 ## API
 
-### `SafeFetcher.fetch(url, options)`
+### `SafeFetcher.sfetch(url, callback)`
 
 Performs a fetch request and handles errors.
 
 - `url` (string): The URL to fetch.
-- `options` (object): Optional settings that you want to apply to the request.
+- `callback` ((object) => void): Callback that will be performed on the resulting data, only if it succeds.
 
 Returns a Promise that resolves to the response object.
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request on GitHub.
+Contributions from outside sources are not neccesary. This is a small project
 
 ## License
 
